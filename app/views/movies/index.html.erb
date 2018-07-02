@@ -1,1 +1,9 @@
-<h1>Standard greeting</h1>
+<% @movies.each do |movie| %>
+    <div>
+        <h1><%= movie.title %></h1><br />
+        <i><<%= movie.rating %></i><br />
+        <p><%= movie.review %></p><br />
+    </div>
+    
+    <hr />
+<% end %>
