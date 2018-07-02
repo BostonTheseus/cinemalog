@@ -1,9 +1,8 @@
 <% @movies.each do |movie| %>
-    <div>
-        <h1><%= movie.title %></h1><br />
-        <i><<%= movie.rating %></i><br />
+    <div class="booyah-box col-10 offset-1">
+        <h1><%= movie.title %></h1>
+        <i><<%= movie.rating %></i><br /><br />
         <p><%= movie.review %></p><br />
     </div>
     
-    <hr />
 <% end %>
