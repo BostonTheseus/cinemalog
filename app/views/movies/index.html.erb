@@ -1,5 +1,6 @@
 <% @movies.each do |movie| %>
     <div class="booyah-box col-10 offset-1">
+        <h1><%= link_to movie.name, movie_path(movie) %></h1><br />
         <h1><%= movie.title %></h1>
         <i><<%= movie.rating %></i><br /><br />
         <p><%= movie.review %></p><br />

@@ -14,6 +14,10 @@ class MoviesController < ApplicationController
         current_user.movies.create(movie_params)
         redirect_to root_path
     end
+    
+    def show
+        @movie = Movie.find(params[:id])
+    end
 
   private
 
