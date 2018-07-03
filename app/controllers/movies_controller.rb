@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create]
+    
     def index
         @movies = Movie.all
         @movies = Movie.paginate(:page => params[:page], :per_page => 30)
@@ -9,7 +11,7 @@ class MoviesController < ApplicationController
     end
     
     def create
-        Movie.create(movie_params)
+        current_user.movies.create(movie_params)
         redirect_to root_path
     end
 
