@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.default_url_options = { host: 'cinemalog-obviouslyrob.c9users.io/' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
