@@ -4,8 +4,8 @@
         <i><<%= movie.rating %></i><br /><br />
         <p><%= movie.review %></p><br />
         
-    <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+    <% if movie.user.present? %>
+      <small><%= movie.user.email %></small>
     <% end %>
     
     </div>
