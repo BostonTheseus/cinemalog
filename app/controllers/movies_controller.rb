@@ -18,6 +18,16 @@ class MoviesController < ApplicationController
     def show
         @movie = Movie.find(params[:id])
     end
+    
+    def edit
+        @movie = Movie.find(params[:id])
+    end
+    
+    def update
+        @movie = Movie.find(params[:id])
+        @movie.update_attributes(movie_params)
+        redirect_to root_path
+    end
 
   private
 

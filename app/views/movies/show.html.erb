@@ -1,6 +1,9 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%= @movie.title %></h1>
   <i><%= @movie.rating %></i>
-  <br/><br/>
+  <br /><br />
   <p><%= @movie.review %></p>
+  <div class="float-right">
+    <%= link_to 'Edit', edit_movie_path(@movie), class: 'btn btn-primary' %>
+  </div>
 </div>
