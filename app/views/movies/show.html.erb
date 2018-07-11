@@ -4,7 +4,9 @@
   <br /><br />
   <p><%= @movie.review %></p>
   <div class="float-right">
-    <%= link_to 'Edit', edit_movie_path(@movie), class: 'btn btn-primary' %>
+    <% if current_user && current_user == @place.user %>
+      <%= link_to 'Edit', edit_movie_path(@movie), class: 'btn btn-primary' %>
+    <% end %>
     <%= link_to 'Destroy', movie_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
   </div>
 </div>

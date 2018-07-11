@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update]
     
     def index
         @movies = Movie.all
@@ -21,12 +21,23 @@ class MoviesController < ApplicationController
     
     def edit
         @movie = Movie.find(params[:id])
+        
+        if @place.user != current_user
+            return render plain: 'Not Allowed', status: :forbidden
+        end
     end
     
     def update
         @movie = Movie.find(params[:id])
+        
+        if @place.user != current_user
+            return render plain: 'Not Allowed', status: :forbidden
+        end
+        
         @movie.update_attributes(movie_params)
         redirect_to root_path
+        
+
     end
     
     def destroy
