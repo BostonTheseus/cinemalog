@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     def edit
         @movie = Movie.find(params[:id])
         
-        if @place.user != current_user
+        if @movie.user != current_user
             return render plain: 'Not Allowed', status: :forbidden
         end
     end
@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
     def update
         @movie = Movie.find(params[:id])
         
-        if @place.user != current_user
+        if @movie.user != current_user
             return render plain: 'Not Allowed', status: :forbidden
         end
         
