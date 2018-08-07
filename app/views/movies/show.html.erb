@@ -12,7 +12,7 @@
 </div>
 
 <div class="clear"></div>
-<%= simple_form_for @review, url: '#' do |f| %>
+<%= simple_form_for @review, url: movie_reviews_path(@movie) do |f| %>
   <%= f.input :message %>
   <%= f.input :rating %>
   <%= f.submit "Add your Review!", class: 'btn btn-primary' %>
