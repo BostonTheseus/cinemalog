@@ -14,7 +14,7 @@
 <div class="clear"></div>
 <%= simple_form_for @review, url: movie_reviews_path(@movie) do |f| %>
   <%= f.input :message %>
-  <%= f.input :rating %>
+  <%= f.input :rating, as: :select, collection: Review::RATINGS %>
   <%= f.submit "Add your Review!", class: 'btn btn-primary' %>
 <% end %>
 
