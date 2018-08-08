@@ -17,3 +17,15 @@
   <%= f.input :rating %>
   <%= f.submit "Add your Review!", class: 'btn btn-primary' %>
 <% end %>
+
+<h1>Reviews</h1>
+
+<% @movie.reviews.each do |review| %>
+  <div>
+    <blockquote>
+      <b><%= review.rating %></b> -
+        <%= review.message %>
+      <small><%= review.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
