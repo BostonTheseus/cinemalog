@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @movie = Movie.find(params[:place_id])
+    @movie = Movie.find(params[:movie_id])
     @movie.reviews.create(review_params.merge(user: current_user))
     redirect_to movie_path(@movie)
   end
